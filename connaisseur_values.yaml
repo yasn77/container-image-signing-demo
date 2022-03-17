@@ -1,0 +1,17 @@
+---
+validators:
+  - name: default
+    type: cosign
+    trust_roots:
+      - name: default
+        key: |
+          -----BEGIN PUBLIC KEY-----
+          MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDCKBtazS703ad5HJWwXlxKuAnMiE
+          h6dwPmVEIsUFZ/nWheWZy/mwY1BNtaQEfXNGIt4T22JXL5DpkwHDVZswNg==
+          -----END PUBLIC KEY-----
+
+policy:
+  - pattern: "ghcr.io/yasn77/container-image-signing-demo:*"
+    validator: default
+    with:
+      trust_root: default
